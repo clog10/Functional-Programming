@@ -1,0 +1,1 @@
+["^ ","~$analyze-import-vars",["^ ","~:row",6,"~:col",1,"~:fixed-arities",["~#set",[2]],"~:name","^0","~:ns","~$clj-kondo.impl.analyzer.potemkin","~:top-ns","^7","~:arities",["^ ","~i2",["^ ","~:ret","~:vector"]]]]

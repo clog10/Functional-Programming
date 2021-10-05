@@ -1,0 +1,342 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+c o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; Starting Jack-in Terminal: cmd.exe /d /c lein update-in :dependencies conj [nrepl,"0.8.3"] -- update-in :plugins conj [cider/cider-nrepl,"0.25.8"] -- update-in [:repl-options,:nrepl-middleware] conj '["cider.nrepl/cider-middleware"]' -- repl :headless
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS: 
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉plffinal.core꞉>  ; Use `alt+enter` to evaluate
+; Jack-in done.
+clj꞉plffinal.core꞉> 
+(+ 5 5)
+10
+clj꞉plffinal.core꞉> 
+">"
+clj꞉plffinal.core꞉> 
+(into [] ())
+[]
+clj꞉plffinal.core꞉> 
+#'plffinal.core/convierte-a-vector
+clj꞉plffinal.core꞉> 
+#'plffinal.core/filtra
+clj꞉plffinal.core꞉> 
+#'plffinal.core/cuenta
+clj꞉plffinal.core꞉> 
+#'plffinal.core/regresa-al-punto-de-origen?
+clj꞉plffinal.core꞉> 
+(regresan-al-punto-de-origen?)
+true
+clj꞉plffinal.core꞉> 
+(regresa-al-punto-de-origen? (list \> \<))
+; Syntax error compiling at (c:\Users\Carlos Loaeza\plffinal\.calva\output-window\output.calva-repl:40:1).
+; Unable to resolve symbol: regresa-al-punto-de-origen? in this context
+clj꞉plffinal.core꞉> 
+; Syntax error compiling at (c:\Users\Carlos Loaeza\plffinal\src\plffinal\core.clj:37:13).
+; Unable to resolve symbol: cuenta in this context
+clj꞉plffinal.core꞉> 
+; Syntax error compiling at (c:\Users\Carlos Loaeza\plffinal\src\plffinal\core.clj:27:16).
+; Unable to resolve symbol: filtra in this context
+clj꞉plffinal.core꞉> 
+; Syntax error compiling at (c:\Users\Carlos Loaeza\plffinal\src\plffinal\core.clj:18:33).
+; Unable to resolve symbol: convierte-a-vector in this context
+clj꞉plffinal.core꞉> 
+#'plffinal.core-test/convierte-a-vector
+clj꞉plffinal.core-test꞉> 
+#'plffinal.core/cuenta
+clj꞉plffinal.core꞉> 
+#'plffinal.core/regresa-al-punto-de-origen?
+clj꞉plffinal.core꞉> 
+(regresa-al-punto-de-origen? (list \> \<))
+true
+clj꞉plffinal.core꞉> 
+(regresa-al-punto-de-origen? ">")
+false
+clj꞉plffinal.core꞉> 
+(regresa-al-punto-de-origen? (list \> \> \> \< \<))
+false
+clj꞉plffinal.core꞉> 
+(regresan-al-punto-de-origen? [])
+true
+clj꞉plffinal.core꞉> 
+(regresan-al-punto-de-origen? [] "" (list))
+true
+clj꞉plffinal.core꞉> 
+(regresan-al-punto-de-origen? "" "" "" "" [] [] [] (list) "")
+true
+clj꞉plffinal.core꞉> 
+#'plffinal.core/mismo-punto-final?
+clj꞉plffinal.core꞉> 
+(mismo-punto-final? "" [])
+true
+clj꞉plffinal.core꞉> 
+(mismo-punto-final? "^^^" "<^^^>")
+false
+clj꞉plffinal.core꞉> 
+(mismo-punto-final? "" "<")
+false
+clj꞉plffinal.core꞉> 
+(mismo-punto-final? "vvv" "<^^^>")
+true
+clj꞉plffinal.core꞉> 
+(mismo-punto-final? [\< \< \< \>] (list \> \>))
+true
+clj꞉plffinal.core꞉> 
+(mismo-punto-final? (list \< \v \>) (list \> \v \<))
+false
+clj꞉plffinal.core꞉> 
+(mismo-punto-final? (list \< \v \>) (list \> \^ \<))
+true
+clj꞉plffinal.core꞉> 
+(mismo-punto-final? "" "<")
+false
+clj꞉plffinal.core꞉> 
+(mismo-punto-final? [\> \>] "<>")
+false
+clj꞉plffinal.core꞉> 
+(mismo-punto-final? [\> \> \>] [\> \> \> \>])
+false
+clj꞉plffinal.core꞉> 
+(mismo-punto-final? (list) (list \^))
+false
+clj꞉plffinal.core꞉> 
+; Syntax error reading source at (REPL:13:10).
+; Unmatched delimiter: }
+clj꞉plffinal.tabla꞉> 
+#'plffinal.tabla/diccionario-sustitucion
+clj꞉plffinal.tabla꞉> 
+nil
+clj꞉plffinal.tabla꞉> 
+nil
+clj꞉plffinal.core-test꞉> 
+nil
+clj꞉plffinal.core꞉> 
+(t/diccionario-sustitucion \<)
+\>
+clj꞉plffinal.core꞉> 
+(map t/diccionario-sustitucion (convierte-a-vector ">>>"))
+(\< \< \<)
+clj꞉plffinal.core꞉> 
+(map t/diccionario-sustitucion (convierte-a-vector [\< \v \v \v \> \>]))
+(nil nil \> nil nil \^ nil nil \^ nil nil \^ nil nil \< nil nil \< nil)
+clj꞉plffinal.core꞉> 
+(convierte-a-vector [\< \v \v \v \> \>])
+[\[ \\ \< \space \\ \v \space \\ \v \space \\ \v \space \\ \> \space \\ \> \]]
+clj꞉plffinal.core꞉> 
+(map )
+#'plffinal.core/obtener-valor
+clj꞉plffinal.core꞉> 
+(map obtener-valor (convierte-a-vector [\< \v \v \v \> \>]))
+(\[ \\ \> \space \\ \^ \space \\ \^ \space \\ \^ \space \\ \< \space \\ \< \])
+clj꞉plffinal.core꞉> 
+ 
+#'plffinal.core/convierte-a-vector
+clj꞉plffinal.core꞉> 
+(convierte-a-vector "calros")
+[\c \a \l \r \o \s]
+clj꞉plffinal.core꞉> 
+(convierte-a-vector [1 2 3])
+[\[ \1 \space \2 \space \3 \]]
+clj꞉plffinal.core꞉> 
+(map char (concat [1 2 3] [4 5 6]))
+(\ \ \ \ \ \)
+clj꞉plffinal.core꞉> 
+(map char (concat [1 2 3] [4 5 \a]))
+(\ \ \ \ \ \a)
+clj꞉plffinal.core꞉> 
+(map char (concat [1 2 3] [4 \< \a]))
+(\ \ \ \ \< \a)
+clj꞉plffinal.core꞉> 
+#'plffinal.core/convierte-a-vector
+clj꞉plffinal.core꞉> 
+(convierte-a-vector [1 2 3])
+; Execution error (ClassCastException) at plffinal.core/convierte-a-vector (form-init5817729923504493778.clj:9).
+; class clojure.lang.PersistentVector cannot be cast to class java.lang.Number (clojure.lang.PersistentVector is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉plffinal.core꞉> 
+#'plffinal.core/convierte-a-vector
+clj꞉plffinal.core꞉> 
+(convierte-a-vector [1 2 3])
+[\[ \1 \space \2 \space \3 \]]
+clj꞉plffinal.core꞉> 
+(concat [1 2 3] [4 5 6])
+(1 2 3 4 5 6)
+clj꞉plffinal.core꞉> 
+(into [] (concat [1 2 3] [4 5 6]))
+[1 2 3 4 5 6]
+clj꞉plffinal.core꞉> 
+(char \a)
+\a
+clj꞉plffinal.core꞉> 
+#'plffinal.core/convierte-a-vector
+clj꞉plffinal.core꞉> 
+(map t/diccionario-sustitucion (convierte-a-vector [\< \v \v \v \> \>]))
+(nil)
+clj꞉plffinal.core꞉> 
+(map t/diccionario-sustitucion (map char (convierte-a-vector [\< \v \v \v \> \>])))
+; Error printing return value (ClassCastException) at clojure.lang.RT/charCast (RT.java:1060).
+; class clojure.lang.PersistentVector cannot be cast to class java.lang.Number (clojure.lang.PersistentVector is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉plffinal.core꞉> 
+#'plffinal.core/convierte-a-vector
+clj꞉plffinal.core꞉> 
+#'plffinal.core/sustituye
+clj꞉plffinal.core꞉> 
+(sustituye ">>>")
+(\< \< \<)
+clj꞉plffinal.core꞉> 
+(sustituye [\< \v \v \v \> \>])
+(\> \^ \^ \^ \< \<)
+clj꞉plffinal.core꞉> 
+#'plffinal.core/sustituye
+clj꞉plffinal.core꞉> 
+(sustituye [\< \v \v \v \> \>])
+(\< \< \^ \^ \^ \>)
+clj꞉plffinal.core꞉> 
+(= (\< \< \^ \^ \^ \>) (sustituye [\< \v \v \v \> \>]))
+; Execution error (ClassCastException) at plffinal.core/eval7369 (form-init5817729923504493778.clj:203).
+; class java.lang.Character cannot be cast to class clojure.lang.IFn (java.lang.Character is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉plffinal.core꞉> 
+#'plffinal.core/sustituye
+clj꞉plffinal.core꞉> 
+#'plffinal.core/regreso-al-punto-de-origen
+clj꞉plffinal.core꞉> 
+(regreso-al-punto-de-origen "")
+()
+clj꞉plffinal.core꞉> 
+(regreso-al-punto-de-origen (list \^ \^ \^ \> \< \v \v \v))
+()
+clj꞉plffinal.core꞉> 
+(regreso-al-punto-de-origen ">>>")
+(\< \< \<)
+clj꞉plffinal.core꞉> 
+(regreso-al-punto-de-origen [\< \v \v \v \> \>])
+(\< \< \^ \^ \^ \>)
+clj꞉plffinal.core꞉> 
+#'plffinal.core/sustituye
+clj꞉plffinal.core꞉> 
+#'plffinal.core/regreso-al-punto-de-origen
+clj꞉plffinal.core꞉> 
+(regreso-al-punto-de-origen [\< \v \v \v \> \>])
+(\< \< \^ \^ \^ \>)
+clj꞉plffinal.core꞉> 
+(regreso-al-punto-de-origen ">>>")
+(\< \< \<)
+clj꞉plffinal.core꞉> 
+(regreso-al-punto-de-origen (list \^ \^ \^ \> \< \v \v \v))
+()
+clj꞉plffinal.core꞉> 
+(regreso-al-punto-de-origen "")
+()
+clj꞉plffinal.core꞉> 
+(= (\< \< \^ \^ \^ \>) (sustituye [\< \v \v \v \> \>]))
+; Execution error (ClassCastException) at plffinal.core/eval7393 (form-init5817729923504493778.clj:239).
+; class java.lang.Character cannot be cast to class clojure.lang.IFn (java.lang.Character is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉plffinal.core꞉> 
+seq
+#function[clojure.core/seq--5402]
+clj꞉plffinal.core꞉> 
+plffinal.core/eval7393 (form-init5817729923504493778.clj:239)
+clojure.lang.Compiler/eval (Compiler.java:7177)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj꞉plffinal.core꞉> 
+(= (\< \< \^ \^ \^ \>) (regreso-al-punto-de-origen [\< \v \v \v \> \>]))
+; Execution error (ClassCastException) at plffinal.core/eval7395 (form-init5817729923504493778.clj:264).
+; class java.lang.Character cannot be cast to class clojure.lang.IFn (java.lang.Character is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉plffinal.core꞉> 
+(is (= (\< \< \^ \^ \^ \>) (regreso-al-punto-de-origen [\< \v \v \v \> \>])))
+; Syntax error compiling at (c:\Users\Carlos Loaeza\plffinal\.calva\output-window\output.calva-repl:268:1).
+; Unable to resolve symbol: is in this context
+clj꞉plffinal.core꞉> 
+(rseq (\< \< \^ \^ \^ \>))
+; Execution error (ClassCastException) at plffinal.core/eval7398 (form-init5817729923504493778.clj:272).
+; class java.lang.Character cannot be cast to class clojure.lang.IFn (java.lang.Character is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉plffinal.core꞉> 
+(seq '(\< \< \^ \^ \^ \>))
+; Execution error (ClassCastException) at plffinal.core/eval7400 (form-init5817729923504493778.clj:276).
+; class java.lang.Character cannot be cast to class clojure.lang.IFn (java.lang.Character is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉plffinal.core꞉> 
+(\< \< \^ \^ \^ \>)
+clj꞉plffinal.core꞉> 
+(= (seq '(\< \< \^ \^ \^ \>)) (regreso-al-punto-de-origen [\< \v \v \v \> \>]))
+true
+clj꞉plffinal.core꞉> 
+(= (seq '(\< \< \<)) (regreso-al-punto-de-origen ">>>"))
+true
+clj꞉plffinal.core꞉> 
+(= (seq '()) (regreso-al-punto-de-origen ""))
+; Execution error (ArityException) at plffinal.core/eval7408 (form-init5817729923504493778.clj:288).
+; Wrong number of args (2) passed to: clojure.core/seq--5402
+clj꞉plffinal.core꞉> 
+false
+clj꞉plffinal.core꞉> 
+(seq '())
+nil
+clj꞉plffinal.core꞉> 
+(empty? (regreso-al-punto-de-origen ""))
+true
+clj꞉plffinal.core꞉> 
+(empty? (regreso-al-punto-de-origen ""))
+true
+clj꞉plffinal.core꞉> 
+(empty? (regreso-al-punto-de-origen (list \^ \^ \^ \> \< \v \v \v)))
+true
+clj꞉plffinal.core꞉> 
+; Evaluating file: core_test.clj
+#'plffinal.core-test/punto-5
+; Running test: punto-5…
+; FAIL in plffinal.core-test/punto-5 (core_test.clj:59):
+; Dadas 2 secuencias de sentidos, las cuales parten del mismo punto de origen, indicar cuantas veces coinciden en un mismo punto
+; expected:
+(= 0 1)
+; actual:
+(not (= 0 1))
+; 1 tests finished, problems found. 😭 errors: 0, failures: 1, ns: 1, vars: 1
+clj꞉plffinal.core-test꞉> 
+; Running all project tests…
+; FAIL in plffinal.core-test/punto-5 (core_test.clj:59):
+; Dadas 2 secuencias de sentidos, las cuales parten del mismo punto de origen, indicar cuantas veces coinciden en un mismo punto
+; expected:
+(= 0 1)
+; actual:
+(not (= 0 1))
+; 40 tests finished, problems found. 😭 errors: 0, failures: 1, ns: 1, vars: 5
+clj꞉plffinal.core-test꞉> 
+; Running all project tests…
+; FAIL in plffinal.core-test/punto-5 (core_test.clj:59):
+; Dadas 2 secuencias de sentidos, las cuales parten del mismo punto de origen, indicar cuantas veces coinciden en un mismo punto
+; expected:
+(= 0 1)
+; actual:
+(not (= 0 1))
+; 40 tests finished, problems found. 😭 errors: 0, failures: 1, ns: 1, vars: 5
+clj꞉plffinal.core-test꞉> 
+#'plffinal.core/coincidencias
+clj꞉plffinal.core꞉> 
+(coincidencias "" [])
+1
+clj꞉plffinal.core꞉> 
+(coincidencias (list \< \<) [\> \>])
+3
+clj꞉plffinal.core꞉> 
